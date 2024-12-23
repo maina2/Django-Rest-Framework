@@ -1,0 +1,66 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+env/
+venv/
+*.env
+*.venv
+*.pytest_cache
+*.tox
+*.nox
+*.coverage
+*.hypothesis/
+.coverage.*
+*.mocha
+*.log
+*.pot
+*.py[cod]
+
+# Django
+*.sqlite3
+db.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# VS Code
+.vscode/
+
+# Node.js
+node_modules/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDEs
+.idea/
+
+# Python Wheel
+*.whl
+
+# PyInstaller
+dist/
+build/
+*.spec
+
+# Coverage reports
+.coverage
+*.coveragerc
+
+# Pytest
+*.tox
+*.nox
+*.coverage
+*.hypothesis/
+
+# mypy
+.mypy_cache/
+.dmypy.json
