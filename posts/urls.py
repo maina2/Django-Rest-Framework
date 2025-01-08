@@ -9,5 +9,6 @@ urlpatterns = [
     path("delete/<int:post_id>",views.DeletePost,name="delete"),
     path("postsList/",views.PostListCreateView.as_view(),name="viewPostList"),
     path("updateView/<int:post_id>",views.UpdateView.as_view(),name="updateview"),
-    path("mixinsList/",views.PostListCreateView.as_view())
+    path("mixinsList/",views.PostListCreateView.as_view()),
+    path("mixinsall/<int:pk>",views.PostUpdateDeleteMixins.as_view())
 ]
