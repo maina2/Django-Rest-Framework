@@ -28,6 +28,7 @@ class PostUpdateDeleteMixins(generics.GenericAPIView,mixins.RetrieveModelMixin,m
     def delete(self,request:Request,*args, **kwargs):
         return self.destroy(request,*args,*kwargs)
 class PostListCreateView(APIView):
+    
     def get(self,request:Request, *args, **kwargs):
         posts= Posts.objects.all()
         serializer= PostSerializer(instance=posts,many=True)
