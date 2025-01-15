@@ -5,12 +5,13 @@ from rest_framework import status,generics,mixins
 from .models import Posts
 from .serializers import PostSerializer
 from django.shortcuts import get_object_or_404
-
+from rest_framework.permissions import  IsAuthenticated
 
 class PostListCreateView(generics.GenericAPIView,
                          mixins.ListModelMixin,
                          mixins.CreateModelMixin                
         ):
+    permission_classes=[IsAuthenticated]
     serializer_class= PostSerializer
     queryset=Posts.objects.all()
     def get(self,request:Request,*args, **kwargs):
@@ -28,7 +29,7 @@ class PostUpdateDeleteMixins(generics.GenericAPIView,mixins.RetrieveModelMixin,m
     def delete(self,request:Request,*args, **kwargs):
         return self.destroy(request,*args,*kwargs)
 class PostListCreateView(APIView):
-    
+    permission_classes=[IsAuthenticated]
     def get(self,request:Request, *args, **kwargs):
         posts= Posts.objects.all()
         serializer= PostSerializer(instance=posts,many=True)
