@@ -5,13 +5,13 @@ from rest_framework import status,generics,mixins
 from .models import Posts
 from .serializers import PostSerializer
 from django.shortcuts import get_object_or_404
-from rest_framework.permissions import  IsAuthenticated
+from rest_framework.permissions import  IsAuthenticated,IsAuthenticatedOrReadOnly,AllowAny
 
 class PostListCreateView(generics.GenericAPIView,
                          mixins.ListModelMixin,
                          mixins.CreateModelMixin                
         ):
-    permission_classes=[IsAuthenticated]
+    permission_classes=[IsAuthenticatedOrReadOnly]
     serializer_class= PostSerializer
     queryset=Posts.objects.all()
     def get(self,request:Request,*args, **kwargs):
